@@ -1,0 +1,30 @@
+{
+  "name": "jemusic",
+  "version": "1.0.0",
+  "description": "back-end side",
+  "main": "index.js",
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "mongodb-autoincrement": "^1.0.1",
+    "mongoose": "^5.1.0",
+    "pg": "^7.4.3",
+    "promise": "^8.0.1",
+    "system-sleep": "^1.3.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ReutLeib/JeMusic.git"
+  },
+  "author": "reut and tal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ReutLeib/JeMusic/issues"
+  },
+  "homepage": "https://github.com/ReutLeib/JeMusic#readme"
+}

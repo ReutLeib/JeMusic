@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> hello from Express server</title>
+    <link href="/style.css" rel="stylesheet">
+  </head>
+  <body>
+    <h1>API</h1>
+    <h2>Wolcome to <span id="spanSub">JeMusic<span> Application</h2>
+
+      <section id="usersJSON" class="card">
+      <section class="container">
+        <h4>JSON <span class="formatColor">Users</span> format example:</h4> 
+          <p> { <br>
+          &nbsp; &nbsp; &nbsp;_id: <br>
+            &nbsp; &nbsp; &nbsp; &nbsp; { <br>
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "5afc4aa98592992a78f6589c",<br>
+            &nbsp; &nbsp; &nbsp; &nbsp; }, <br>
+            &nbsp; &nbsp; &nbsp; userName: "userFun", <br>
+            &nbsp; &nbsp; &nbsp; password: "1234", <br>
+            &nbsp; &nbsp; &nbsp; name: "user", <br>
+            &nbsp; &nbsp; &nbsp; profilePic: "/images/user1.jpeg", <br>
+            &nbsp; &nbsp; &nbsp; age: "26", <br>
+            &nbsp; &nbsp; &nbsp; city: "Tel-Aviv", <br>
+
+            &nbsp; &nbsp; &nbsp; subjects: <br>
+            &nbsp; &nbsp; &nbsp; [ <br>
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{<br>
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $oid: "5b141d107cfeac5a7c3b52c4",<br>
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $oid: "5b141d1d7cfeac5a7c3b52c5"<br>
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;} <br>
+            &nbsp; &nbsp; &nbsp; ], <br>
+
+            &nbsp; &nbsp; &nbsp; videos: <br>
+            &nbsp; &nbsp; &nbsp; [ <br>
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{<br>
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $oid: "5b1405cc29b3924160cbffb0"<br>
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $oid: "5b1405cc29b3924160cbffb1"<br>
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;} <br>
+            &nbsp; &nbsp; &nbsp; ], <br>
+
+
+            &nbsp; &nbsp; &nbsp; skills: <br>
+            &nbsp; &nbsp; &nbsp; [ <br>
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;"Guitar",<br>
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;"Piano" <br>
+            &nbsp; &nbsp; &nbsp; ], <br>
+          }
+          </p>
+      </section>
+    </section>
+
+<!-- without:
+               crwod -->
+      <section id="subjectJSON" class="card">
+      <section class="container">
+        <h4>JSON <span class="formatColor">Subject</span> format example:</h4> 
+        <p> { <br>
+          &nbsp; &nbsp; &nbsp;_id: <br>
+            &nbsp; &nbsp; &nbsp; &nbsp; { <br>
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "5afc4aa98592992a78f6589c",<br>
+            &nbsp; &nbsp; &nbsp; &nbsp; }, <br>
+            &nbsp; &nbsp; &nbsp; name: "Jem1", <br>
+            &nbsp; &nbsp; &nbsp; background: "/images/jem1.jpeg", <br>
+            &nbsp; &nbsp; &nbsp; date: "15.4.18", <br>
+            &nbsp; &nbsp; &nbsp; hours: "19:30-21:30", <br>
+            &nbsp; &nbsp; &nbsp; type: "Rock", <br>
+            &nbsp; &nbsp; &nbsp; about: "The Jem is very nice", <br>
+            &nbsp; &nbsp; &nbsp; requiredSkills: "1 Guitar player, 2 Drumers, 3 Bass players", <br>
+            &nbsp; &nbsp; &nbsp; participents: <br>
+            &nbsp; &nbsp; &nbsp; [ <br>
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;"ReutL",<br>
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;"Galush" <br>
+            &nbsp; &nbsp; &nbsp; ] <br>
+            }
+          </p>
+      </section>
+    </section>
+
+          <section id="videoJSON" class="card">
+      <section class="container">
+        <h4>JSON <span class="formatColor">Videos</span> format example:</h4> 
+        <p> { <br>
+          &nbsp; &nbsp; &nbsp;_id: <br>
+            &nbsp; &nbsp; &nbsp; &nbsp; { <br>
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "5b29012afb6fc033f88794a4",<br>
+            &nbsp; &nbsp; &nbsp; &nbsp; }, <br>
+            &nbsp; &nbsp; &nbsp; vid: "https://www.youtube.com/watch?v=aaaaaaaa", <br>
+            &nbsp; &nbsp; &nbsp; likes: 12 <br>
+         }
+          </p>
+      </section>
+    </section>
+
+      <section id="favoriteJSON" class="card">
+      <section class="container">
+        <h4>JSON <span class="formatColor">Favorite</span> format example:</h4> 
+        <p> { <br>
+          &nbsp; &nbsp; &nbsp;_id: <br>
+            &nbsp; &nbsp; &nbsp; &nbsp; { <br>
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "5b28bbe626e6b34ec89284f2",<br>
+            &nbsp; &nbsp; &nbsp; &nbsp; }, <br>
+            &nbsp; &nbsp; &nbsp; type: "Rock", <br>
+            &nbsp; &nbsp; &nbsp; userName: "test1" <br>
+            &nbsp; &nbsp; &nbsp; statistic: "0.56" <br>
+            }        
+          </p>
+      </section>
+    </section>
+
+  <section id="secFunctions">
+    <h3> Functions(Routes): </h3>
+    <p>
+
+      <b>Route.1: insertUser: </b><br>
+          gets parameters: userName , password , name, age, city<br>
+          returns: Json of User <br><br>
+
+      <b>Route.2: insertSubject: </b><br>
+          gets parameters: userName,  name, date, hours, type, location, requiredSkills<br>
+          returns: Json of Subject  <br><br>
+          
+      <b>Route.3: getAllVideosByUserName: </b><br>
+          gets parameters: userName <br>
+          returns: Json of Videos<br><br>
+          
+      <b>Route.4: getAllSubjects: </b><br>
+          gets parameters: - <br>
+          returns: Json of Subjects <br><br>
+
+      <b>Route.5: getAllSubjectsByUserName: </b><br>
+          gets parameters: userName <br>
+          returns: Json of Subjects <br><br>
+
+      <b>Route.6: getSubjectByName: </b><br>
+          gets parameters: name <br>
+          returns: Json of Subject <br><br>
+          
+      <b>Route.7: getSubjectByDate: </b><br>
+          gets parameters: date <br>
+          returns: Json of Subject<br><br>  
+
+      <b>Route.8: followSubject: </b><br>
+          gets parameters:  name, userName  <br>
+          returns: boolean<br><br>
+
+      <b>Route.9: deleteSubjectByName: </b><br>
+          gets parameters: name<br>
+          returns: boolean<br><br>
+
+      <b>Route.10: deleteUserByUserName: </b><br>
+          gets parameters: userName<br>
+          returns: boolean<br><br>
+
+      <b>Route.11: getUserByUserName: </b><br>
+          gets parameters: userName<br>
+          returns: Json of User<br><br>
+
+      <b>Route.12: getSubjectsByFavorites: </b><br>
+          gets parameters: userName<br>
+          returns: Json of Subjects <br><br>
+
+      <b>Route.13: UpdateParticipentsByUserName: </b><br>
+          gets parameters: userName, name<br>
+          returns: Json of Subjects<br><br>
+
+      <b>Route.14: UpdateCityByUserName: </b><br>
+          gets parameters: userName, city<br>
+          returns: boolean<br><br>
+
+      <b>Route.15: UpdateAgeByUserName: </b><br>
+          gets parameters: userName, age<br>
+          returns: boolean<br><br>
+          
+      <b>Route.16: UpdateNameByUserName: </b><br>
+          gets parameters:  userName, name<br>
+          returns: boolean<br><br>
+    </p>
+    
+  </section> 
+    
+  </body>
+</html> 
+

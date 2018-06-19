@@ -1,0 +1,28 @@
+{
+  "name": "JeMusic",
+  "version": "1.0.0",
+  "description": "Front-End side",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "mongodb-autoincrement": "^1.0.1",
+    "mongoose": "^5.1.0",
+    "promise": "^8.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ReutLeib/PrivateMessages.git"
+  },
+  "author": "ReutLeib",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ReutLeib/PrivateMessages/issues"
+  },
+  "homepage": "https://github.com/ReutLeib/PrivateMessages#readme"
+}

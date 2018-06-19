@@ -1,0 +1,83 @@
+*{font-family: arial;color: #d7cbed; }
+
+body{
+  width: 100%;
+  display: block;
+  background-color: #262525;
+}
+
+h1{
+  font-size: 44px;
+  text-align: center;
+  color: white;
+}
+
+h2{
+  font-size: 30px;
+  text-align: center;
+  color: white;
+}
+
+h4, h5{
+    display: inline-block;
+    color: white;
+}
+
+#secFunctions{
+  position: absolute;
+  padding: 15px;
+  width: 100%;
+  top:1200px;
+  border-radius: 10px;
+  display: block;
+}
+
+h3{
+  text-align: center;
+  color: #E084F5;
+}
+
+.formatColor{
+  color:#3ba8e2;
+  font-size: 26px;
+}
+
+#spanSub{
+  color: #E084F5;
+}
+
+.card {
+  position: absolute;
+    background-color: #626973;
+    width: 40%;
+    border-radius: 10px;
+    display: inline-block;
+
+}
+
+.card:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container {
+    padding: 2px 16px;
+}
+
+#usersJSON{
+  left:100px;
+}
+
+#subjectJSON{
+  left: 750px;
+}
+
+
+#videoJSON{
+  top:630px;
+  left:750px;
+}
+
+#favoriteJSON{
+  top:905px;
+  left:750px;
+}
