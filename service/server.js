@@ -34,7 +34,7 @@ app.post('/bla/', smartSearchCtl.bla)   // value : userName
 
 // subjectCtl:
 app.post('/getAllSubjectsByUserName/',subjectCtl.getAllSubjectsByUserName); // value : userName
-app.post('/getAllSubjects/', subjectCtl.getAllSubjects);    // no values
+app.get('/getAllSubjects/', subjectCtl.getAllSubjects);    // no values
 app.post('/getSubjectByName/', subjectCtl.getSubjectByName);    // value : name
 app.post('/getSubjectByDate/', subjectCtl.getSubjectByDate);  // value : date
 app.post('/insertSubject/', subjectCtl.insertSubject);  // values: name, date, hours, type, location, requiredSkills + userName
