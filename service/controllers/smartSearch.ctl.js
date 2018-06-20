@@ -160,8 +160,6 @@ var insertFavorite = (_type,_userName,_typeFunction) => {
   }); // endOf promise
 }
 
-
-
 exports.getSubjectsByFavorites = (req,res) => {
   
   // var flag = false;
@@ -182,13 +180,10 @@ exports.getSubjectsByFavorites = (req,res) => {
         })
     }
     else{
-      subjectCtl.getAllSubjects().then((subjects,error) =>{
-        if(subjects){
-          res.status(200).send(subjects);
-        }
-        else{
-          res.status(500).send(error);  
-        }
+      promiseArray.push(subjectCtl.getAllSubjectsIfNoFavorite());
+      Promise.all(promiseArray).then((responseArray) => {
+        console.log(responseArray);
+        res.status(200).send(responseArray);
       })
     }
   }, error => {

@@ -205,6 +205,25 @@ exports.getAllSubjects = (req,res) => {
      });
 }   
 
+exports.getAllSubjectsIfNoFavorite = () => {
+
+    console.log("Enter route(POST): /getAllSubjectsIfNoFavorite");
+    
+  return new Promise((resolve, reject)=> {
+  
+    Subject.find({}, (err, subjects) => {
+        if (err) {
+          console.log(projectStrings.ERROR_NO_SUBJECTS);
+          resolve({});
+        }
+        else{
+           resolve(subjects);
+        }
+    });
+
+  }); 
+}  
+
 
 var getAllSubjects_SubjectSchema = () => {
     console.log("Function: /getAllSubjects_SubjectSchema"); 
