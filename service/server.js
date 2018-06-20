@@ -29,8 +29,7 @@ app.post('/deleteUserByUserName/', userCtl.deleteUserByUserName);  // value : us
 app.post('/UpdateCityByUserName/', userCtl.UpdateCityByUserName)  // value : userName, city
 app.post('/UpdateAgeByUserName/', userCtl.UpdateAgeByUserName)   // value : userName, age
 app.post('/UpdateNameByUserName/', userCtl.UpdateNameByUserName)   // value : userName, name
-app.post('/getSubjectsByFavorites/', smartSearchCtl.getSubjectsByFavorites)   // value : userName
-app.post('/bla/', smartSearchCtl.bla)   // value : userName
+app.get('/getSubjectsByFavorites/', smartSearchCtl.getSubjectsByFavorites)   // value : userName
 
 // subjectCtl:
 app.post('/getAllSubjectsByUserName/',subjectCtl.getAllSubjectsByUserName); // value : userName
