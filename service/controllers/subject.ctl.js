@@ -229,6 +229,7 @@ var getAllSubjects_SubjectSchema = () => {
     console.log("Function: /getAllSubjects_SubjectSchema"); 
 
   return new Promise((resolve, reject)=> {
+          console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA fu heroku");
   
     Subject.find({}, (err, subjects) => {
         if (err) {
@@ -236,6 +237,7 @@ var getAllSubjects_SubjectSchema = () => {
           resolve({});
         }
         else{
+          console.log("BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB fu heroku");
            resolve(subjects);
         }
     });

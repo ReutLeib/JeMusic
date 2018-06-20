@@ -8,7 +8,9 @@ var   Subject           = require('../models/define_schema_subject');
       Favorite          = require('../models/define_schema_favorite');
       Promise           = require('bluebird');
     
-
+exports.bla = (req,res) => {
+  res.status(200).send("MESSAGE");
+}
 // _typeFunction = create(0.4)/follow(0.2)/participent(0.4)
 exports.addFavorite_UserSchema = (_userName, _type, _typeFunction,_isToString) =>{
 

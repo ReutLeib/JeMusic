@@ -21,7 +21,6 @@ app.use((req,res,next) => {
 });
 
 /*** All routes ***/
-
 // UserCtl:
 app.post('/insertUser/', userCtl.insertUser); // values: userName , password , name, age, city
 app.post('/getAllVideosByUserName/',  userCtl.getAllVideosByUserName);  // value : userName
@@ -31,7 +30,8 @@ app.post('/UpdateCityByUserName/', userCtl.UpdateCityByUserName)  // value : use
 app.post('/UpdateAgeByUserName/', userCtl.UpdateAgeByUserName)   // value : userName, age
 app.post('/UpdateNameByUserName/', userCtl.UpdateNameByUserName)   // value : userName, name
 app.post('/getSubjectsByFavorites/', smartSearchCtl.getSubjectsByFavorites)   // value : userName
-  
+app.post('/bla/', smartSearchCtl.bla)   // value : userName
+
 // subjectCtl:
 app.post('/getAllSubjectsByUserName/',subjectCtl.getAllSubjectsByUserName); // value : userName
 app.post('/getAllSubjects/', subjectCtl.getAllSubjects);    // no values
@@ -41,8 +41,7 @@ app.post('/insertSubject/', subjectCtl.insertSubject);  // values: name, date, h
 app.post('/UpdateParticipentsByUserName/', subjectCtl.UpdateParticipentsByUserName);   // value : userName, name
 app.post('/followSubject/',subjectCtl.followSubject ) // value : name, userName 
 app.post('/deleteSubjectByName/', subjectCtl.deleteSubjectByName);  // value : name  
-
-                               
+           
 app.listen(port, () => {
     console.log(`listening on port ${port}`);
 });
