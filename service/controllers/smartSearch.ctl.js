@@ -167,7 +167,7 @@ exports.getSubjectsByFavorites = (req,res) => {
   var arrayOfSubjects = [];
   var promiseArray = [];
 
-  GetFavoritesByUserName_FavoriteSchema(req.body.userName).then((favorites,error) => {
+  GetFavoritesByUserName_FavoriteSchema(req.params.userName).then((favorites,error) => {
     //check if return "{}"
     if(favorites != ""){
         for (let j=0; j<favorites.length; j++) {

@@ -146,7 +146,7 @@ var getSubjectByNameReturnSubject_SubjectSchema = (_name) => {
 exports.getAllSubjectsByUserName = (req,res)=>{
     console.log("Enter route(POST): /getAllSubjectsByUserName"); 
 
-    getAllSubjectsByUserName_UserSchema(req.body.userName).then((result,error) => {
+    getAllSubjectsByUserName_UserSchema(req.params.userName).then((result,error) => {
         if(result){
             // if result TRUE:  
             console.log(`RESULT: ${result}`);

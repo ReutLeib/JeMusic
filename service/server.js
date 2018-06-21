@@ -23,16 +23,16 @@ app.use((req,res,next) => {
 /*** All routes ***/
 // UserCtl:
 app.post('/insertUser/', userCtl.insertUser); // values: userName , password , name, age, city
-app.post('/getAllVideosByUserName/',  userCtl.getAllVideosByUserName);  // value : userName
-app.post('/getUserByUserName/', userCtl.getUserByUserName); // value : userName
+app.get('/getAllVideosByUserName/:userName',  userCtl.getAllVideosByUserName);  // value : userName
+app.get('/getUserByUserName/:userName', userCtl.getUserByUserName); // value : userName
 app.post('/deleteUserByUserName/', userCtl.deleteUserByUserName);  // value : userName
 app.post('/UpdateCityByUserName/', userCtl.UpdateCityByUserName)  // value : userName, city
 app.post('/UpdateAgeByUserName/', userCtl.UpdateAgeByUserName)   // value : userName, age
 app.post('/UpdateNameByUserName/', userCtl.UpdateNameByUserName)   // value : userName, name
-app.get('/getSubjectsByFavorites/', smartSearchCtl.getSubjectsByFavorites)   // value : userName
+app.get('/getSubjectsByFavorites/:userName', smartSearchCtl.getSubjectsByFavorites)   // value : userName
 
 // subjectCtl:
-app.post('/getAllSubjectsByUserName/',subjectCtl.getAllSubjectsByUserName); // value : userName
+app.get('/getAllSubjectsByUserName/:userName',subjectCtl.getAllSubjectsByUserName); // value : userName
 app.get('/getAllSubjects/', subjectCtl.getAllSubjects);    // no values
 app.post('/getSubjectByName/', subjectCtl.getSubjectByName);    // value : name
 app.post('/getSubjectByDate/', subjectCtl.getSubjectByDate);  // value : date

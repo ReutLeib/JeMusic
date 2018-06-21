@@ -94,7 +94,7 @@ var IsUniqueUserName_UserSchema = (value) => {
 
   console.log("Enter route(POST): /getAllVideosByUserName");
   
-   getAllVideosByUserName_UserSchema(req.body.userName).then((result,error) => {
+   getAllVideosByUserName_UserSchema(req.params.userName).then((result,error) => {
       if(result){
         // if result TRUE:  
         console.log(`RESULT: ${result}`);
