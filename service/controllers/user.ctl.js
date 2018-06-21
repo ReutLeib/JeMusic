@@ -139,7 +139,7 @@ var getAllVideosByUserName_UserSchema = (_userName) => {
 
       console.log("Enter route(POST): /getUserByUserName");
     
-    getUserByUserName_UserSchema(req.body.userName).then((result,error) => {
+    getUserByUserName_UserSchema(req.params.userName).then((result,error) => {
         if(result != null){
           // if result TRUE:  
           console.log(`RESULT: ${result}`);
