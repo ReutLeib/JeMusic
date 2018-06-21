@@ -254,7 +254,7 @@ exports.getSubjectByName = (req,res) => {
 
   console.log("Enter route(POST): /getSubjectByName");
   
-  getSubjectByName_SubjectSchema(req.body.name).then((result,error) => {
+  getSubjectByName_SubjectSchema(req.params.name).then((result,error) => {
       if(result){
         // if result TRUE:  
         console.log(`RESULT: ${result}`);
@@ -318,7 +318,7 @@ exports.getSubjectByType_SubjectSchema = (_type) => {
 exports.getSubjectByDate = (req,res) => {
     console.log("Enter route(POST): /getSubjectByDate");
   
-  getSubjectByDate_SubjectSchema(req.body.date).then((result,error) => {
+  getSubjectByDate_SubjectSchema(req.params.date).then((result,error) => {
       if(result){
         // if result TRUE:  
         console.log(`RESULT: ${result}`);
