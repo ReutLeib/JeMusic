@@ -11,8 +11,8 @@ module.exports = {
 
   projectStrings: {
     // strings:
-    DEFAULT_PROFILE_PIC: "/images/defaultProfilePic.png",
-    DEFAULT_BACKGROUND_PIC: "/images/defaultBackgroundPic.jpeg",
+    DEFAULT_PROFILE_PIC: "defaultProfilePic.png",
+    DEFAULT_BACKGROUND_PIC: "defaultBackgroundPic.jpeg",
 
     // errors:
     ERROR_REGISTRATION: "Someting went wrong with the REGISTRATION! check your attributes and try again.",

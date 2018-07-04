@@ -35,7 +35,7 @@ app.get('/getSubjectsByFavorites/:userName', smartSearchCtl.getSubjectsByFavorit
 app.get('/getAllSubjectsByUserName/:userName',subjectCtl.getAllSubjectsByUserName); // value : userName
 app.get('/getAllSubjects/', subjectCtl.getAllSubjects);    // no values
 app.get('/getSubjectByName/:name', subjectCtl.getSubjectByName);    // value : name
-app.get('/getSubjectByDate/:date', subjectCtl.getSubjectByDate);  // value : date
+app.post('/getSubjectByDate/', subjectCtl.getSubjectByDate);  // value : date
 app.post('/insertSubject/', subjectCtl.insertSubject);  // values: name, date, hours, type, location, requiredSkills + userName
 app.post('/UpdateParticipentsByUserName/', subjectCtl.UpdateParticipentsByUserName);   // value : userName, name
 app.post('/followSubject/',subjectCtl.followSubject ) // value : name, userName 

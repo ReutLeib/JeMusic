@@ -92,7 +92,7 @@ var IsUniqueUserName_UserSchema = (value) => {
 /////////////////// FOR ROUTE: getAllVideosByUserName ////////////////////////////
  exports.getAllVideosByUserName = (req,res) =>{
 
-  console.log("Enter route(POST): /getAllVideosByUserName");
+  console.log("Enter route(GET): /getAllVideosByUserName");
   
    getAllVideosByUserName_UserSchema(req.params.userName).then((result,error) => {
       if(result){
@@ -137,7 +137,7 @@ var getAllVideosByUserName_UserSchema = (_userName) => {
  
  exports.getUserByUserName = (req,res) =>{
 
-      console.log("Enter route(POST): /getUserByUserName");
+      console.log("Enter route(GET): /getUserByUserName");
     
     getUserByUserName_UserSchema(req.params.userName).then((result,error) => {
         if(result != null){

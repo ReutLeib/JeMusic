@@ -144,7 +144,7 @@ var getSubjectByNameReturnSubject_SubjectSchema = (_name) => {
 
 /////////////////// FOR ROUTE: getAllSubjectsByUserName ////////////////////////////
 exports.getAllSubjectsByUserName = (req,res)=>{
-    console.log("Enter route(POST): /getAllSubjectsByUserName"); 
+    console.log("Enter route(GET): /getAllSubjectsByUserName"); 
 
     getAllSubjectsByUserName_UserSchema(req.params.userName).then((result,error) => {
         if(result){
@@ -188,7 +188,7 @@ var getAllSubjectsByUserName_UserSchema = (_userName) => {
 
 exports.getAllSubjects = (req,res) => {
 
-    console.log("Enter route(POST): /getAllSubjects");
+    console.log("Enter route(GET): /getAllSubjects");
     
     getAllSubjects_SubjectSchema().then((result,error) => {
         if(result){
@@ -252,7 +252,7 @@ var getAllSubjects_SubjectSchema = () => {
 
 exports.getSubjectByName = (req,res) => {
 
-  console.log("Enter route(POST): /getSubjectByName");
+  console.log("Enter route(GET): /getSubjectByName");
   
   getSubjectByName_SubjectSchema(req.params.name).then((result,error) => {
       if(result){
@@ -318,7 +318,7 @@ exports.getSubjectByType_SubjectSchema = (_type) => {
 exports.getSubjectByDate = (req,res) => {
     console.log("Enter route(POST): /getSubjectByDate");
   
-  getSubjectByDate_SubjectSchema(req.params.date).then((result,error) => {
+  getSubjectByDate_SubjectSchema(req.body.date).then((result,error) => {
       if(result){
         // if result TRUE:  
         console.log(`RESULT: ${result}`);
@@ -386,7 +386,6 @@ exports.insertSubject = (req, res) => {
               followSubjectBySubjectID_UserSchema(req.body.userName, result).then((result,error) => {
                  
                   if(result){
-                    console.log("RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR");
                     // if result TRUE:  
                     // add the type of subject to favorites array
                     getSubjectByNameReturnSubject_SubjectSchema(req.body.name).then((subject,error) => { 
@@ -405,7 +404,7 @@ exports.insertSubject = (req, res) => {
                       else{
                          // if result FALSE: 
                       console.log(`RESULT ELSE: ${result}`);
-                      res.status(500).send("ERROR");
+                      res.status(500).send(result);
                       }
                     },error =>{
                       res.status(500).send(error);
@@ -416,7 +415,7 @@ exports.insertSubject = (req, res) => {
                    else{
                     // if result FALSE: 
                     console.log(`RESULT: ${result}`);
-                    res.status(500).send("ERROR");
+                    res.status(500).send(result);
                     }
 
                 }, error =>{

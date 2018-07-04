@@ -163,7 +163,7 @@ var insertFavorite = (_type,_userName,_typeFunction) => {
 exports.getSubjectsByFavorites = (req,res) => {
   
   // var flag = false;
-  console.log("Enter route(POST): /getSubjectsByFavorites");
+  console.log("Enter route(GET): /getSubjectsByFavorites");
   var arrayOfSubjects = [];
   var promiseArray = [];
 
