@@ -374,7 +374,7 @@ exports.insertSubject = (req, res) => {
  IsUniqueName_SubjectSchema(req.body.name).then((result,error) => {
     if(result){
       // if result TRUE:
-      creatSubject_SubjectSchema(req.body.name, backgroundPic, req.body.date, req.body.hours, req.body.type,
+      creatSubject_SubjectSchema(req.body.userName,req.body.name, backgroundPic, req.body.date, req.body.hours, req.body.type,
         req.body.location, req.body.requiredSkills).then((sub,error) => {
 
           if (error) return res.status(500).send(projectStrings.ERROR_ADDING);
@@ -437,13 +437,13 @@ exports.insertSubject = (req, res) => {
  });
 }
 
-  var creatSubject_SubjectSchema = (_name, _backgroundPic, _date, _hours, _type, _location, _requiredSkills) => {
+  var creatSubject_SubjectSchema = (_userName,_name, _backgroundPic, _date, _hours, _type, _location, _requiredSkills) => {
   
     return new Promise((resolve, reject) =>{
         console.log(`_name, _backgroundPic, _date, _hours, _type, _location, _requiredSkills: 
                     ${_name}, ${_backgroundPic}, ${_date}, ${_hours}, ${_type}, ${_location}, ${_requiredSkills}`);
     
-        Subject.create({name: _name, background:_backgroundPic,date:_date, hours:_hours,
+        Subject.create({userName:_userName,name: _name, background:_backgroundPic,date:_date, hours:_hours,
                         type:_type, location:_location, requiredSkills:_requiredSkills},(err, msg) => {
           if (err) {
             console.log(err);

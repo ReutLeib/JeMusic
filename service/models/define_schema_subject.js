@@ -3,6 +3,7 @@ var mongoose  = require('mongoose'),
 
 var subjectsSchema = new mongoose.Schema({
 
+      userName: String,
       name: {
         type: String,
         required:true  

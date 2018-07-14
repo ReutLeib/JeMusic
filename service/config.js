@@ -12,7 +12,7 @@ module.exports = {
   projectStrings: {
     // strings:
     DEFAULT_PROFILE_PIC: "defaultProfilePic.png",
-    DEFAULT_BACKGROUND_PIC: "defaultBackgroundPic.jpeg",
+    DEFAULT_BACKGROUND_PIC: "https://firebasestorage.googleapis.com/v0/b/jemmusic-5c24e.appspot.com/o/defaultBackgroundPic.jpeg?alt=media&token=d479da22-5612-422a-99e7-103366a953d2",
 
     // errors:
     ERROR_REGISTRATION: "Someting went wrong with the REGISTRATION! check your attributes and try again.",
