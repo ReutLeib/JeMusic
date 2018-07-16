@@ -25,10 +25,10 @@ app.use((req,res,next) => {
 app.post('/insertUser/', userCtl.insertUser); // values: userName , password , name, age, city
 app.get('/getAllVideosByUserName/:userName',  userCtl.getAllVideosByUserName);  // value : userName
 app.get('/getUserByUserName/:userName', userCtl.getUserByUserName); // value : userName
-app.post('/deleteUserByUserName/', userCtl.deleteUserByUserName);  // value : userName
-app.post('/UpdateCityByUserName/', userCtl.UpdateCityByUserName)  // value : userName, city
-app.post('/UpdateAgeByUserName/', userCtl.UpdateAgeByUserName)   // value : userName, age
-app.post('/UpdateNameByUserName/', userCtl.UpdateNameByUserName)   // value : userName, name
+app.delete('/deleteUserByUserName/:userName', userCtl.deleteUserByUserName);  // value : userName
+app.put('/UpdateCityByUserName/:userName/:city', userCtl.UpdateCityByUserName)  // value : userName, city
+app.put('/UpdateAgeByUserName/:userName/:age', userCtl.UpdateAgeByUserName)   // value : userName, age
+app.put('/UpdateNameByUserName/:userName/:name', userCtl.UpdateNameByUserName)   // value : userName, name
 app.get('/getSubjectsByFavorites/:userName', smartSearchCtl.getSubjectsByFavorites)   // value : userName
 
 // subjectCtl:

@@ -180,11 +180,12 @@ exports.deleteUserByUserName = (req,res) => {
 
     console.log("Enter route(POST): /deleteUserByUserName");
     
-    deleteUserByUserName_UserSchema(req.body.userName).then((result,error) => {
+    deleteUserByUserName_UserSchema(req.params.userName).then((result,error) => {
+      console.log("userName: " + req.params.userName);
         if(result){
           // if result TRUE:  
           console.log(`RESULT: ${result}`);
-          console.log(`The user ${req.body.userName} have been deleted.`)
+          console.log(`The user ${req.params.userName} have been deleted.`)
           res.status(200).send(result);      
         }
         else{
@@ -268,9 +269,9 @@ exports.deleteUserByUserName = (req,res) => {
 /////////////////// FOR ROUTE: UpdateNameByUserName ////////////////////////////
 
 exports.UpdateNameByUserName = (req,res) => {
-  console.log("Enter route(POST): /UpdateNameByUserName");
+  console.log("Enter route(PUT): /UpdateNameByUserName");
   
-  UpdateNameByUserName_UserSchema(req.body.userName, req.body.name).then((result,error) => {
+  UpdateNameByUserName_UserSchema(req.params.userName, req.params.name).then((result,error) => {
       if(result){
         // if result TRUE:  
         console.log(`RESULT: ${result}`);
@@ -317,9 +318,9 @@ var UpdateNameByUserName_UserSchema = (_userName,_name) => {
 
 exports.UpdateAgeByUserName = (req,res) => {
 
-    console.log("Enter route(POST): /UpdateAgeByUserName");
+    console.log("Enter route(PUT): /UpdateAgeByUserName");
     
-    UpdateAgeByUserName_UserSchema(req.body.userName, req.body.age).then((result,error) => {
+    UpdateAgeByUserName_UserSchema(req.params.userName, req.params.age).then((result,error) => {
         if(result){
           // if result TRUE:  
           console.log(`RESULT: ${result}`);
@@ -366,9 +367,9 @@ exports.UpdateCityByUserName = (req,res) => {
   // value : userName, city
             
 
-  console.log("Enter route(POST): /UpdateCityByUserName");
+  console.log("Enter route(PUT): /UpdateCityByUserName");
   
-  UpdateCityByUserName_UserSchema(req.body.userName, req.body.city).then((result,error) => {
+  UpdateCityByUserName_UserSchema(req.params.userName, req.params.city).then((result,error) => {
       if(!result){
             
         // if result FALSE: 
